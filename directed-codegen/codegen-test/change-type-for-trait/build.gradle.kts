@@ -3,19 +3,22 @@ extra["displayName"] = "Smithy :: Codegen :: Test :: Change Type"
 // Test project does not generate a jar
 tasks["jar"].enabled = false
 
-
 plugins {
-    id("software.amazon.smithy").version("0.7.0")
+    val smithyGradleVersion: String by project
+
+    id("software.amazon.smithy").version(smithyGradleVersion)
 }
 
 buildscript {
+    val smithyVersion: String by project
+
     repositories {
         mavenCentral()
     }
 
     // Set the version of the CLI for the smithy gradle plugin to use when building this project
     dependencies {
-        classpath("software.amazon.smithy:smithy-cli:1.31.0")
+        classpath("software.amazon.smithy:smithy-cli:$smithyVersion")
     }
 }
 

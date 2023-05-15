@@ -1,7 +1,9 @@
 extra["displayName"] = "Smithy :: Codegen :: Example Model"
 
 plugins {
-    id("software.amazon.smithy").version("0.7.0")
+    val smithyGradleVersion: String by project
+
+    id("software.amazon.smithy").version(smithyGradleVersion)
 }
 
 buildscript {
@@ -13,6 +15,6 @@ buildscript {
 
     // Set the version of the CLI for the smithy gradle plugin to use when building this project
     dependencies {
-        classpath("software.amazon.smithy:smithy-cli:1.31.0")
+        classpath("software.amazon.smithy:smithy-cli:$smithyVersion")
     }
 }
