@@ -1,0 +1,10 @@
+{
+  "version": "1.0",
+  "plugins": {
+    "demo-codegen": {
+      "service": "example.weather#Weather",
+      "package": "com.example.weather",
+      "packageVersion": "0.0.1"
+    }
+  }
+}
