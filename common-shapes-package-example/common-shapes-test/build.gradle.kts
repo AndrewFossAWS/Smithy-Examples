@@ -12,6 +12,11 @@ plugins {
 // The test project doesn't produce a JAR.
 tasks["jar"].enabled = false
 
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
 buildscript {
     val smithyVersion: String by project
 
@@ -24,5 +29,5 @@ buildscript {
 dependencies {
     val smithyVersion: String by project
 
-    implementation(project(":common-shapes"))
+    implementation(project(":common-shapes-package"))
 }

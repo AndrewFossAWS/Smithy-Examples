@@ -17,6 +17,6 @@ pluginManagement {
     }
 }
 
-include(":common-shapes")
+include(":common-shapes-package")
 include(":common-shapes-test")
 

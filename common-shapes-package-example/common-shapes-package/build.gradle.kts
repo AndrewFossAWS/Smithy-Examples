@@ -1,9 +1,13 @@
-extra["displayName"] = "Smithy :: Common Validations :: Package"
 
 plugins {
     val smithyGradleVersion: String by project
-
+    `java-library`
     id("software.amazon.smithy").version(smithyGradleVersion)
+}
+
+repositories {
+    mavenLocal()
+    mavenCentral()
 }
 
 buildscript {
