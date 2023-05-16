@@ -1,1 +1,0 @@
-# Custom Validator and Linter Examples
