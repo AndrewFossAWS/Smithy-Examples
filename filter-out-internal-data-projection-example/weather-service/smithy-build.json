@@ -1,16 +1,57 @@
 {
   "version": "1.0",
-  "maven": {
-    "dependencies": [
-      "software.amazon.smithy:smithy-openapi:1.30.0",
-      "software.amazon.smithy:smithy-aws-traits:1.30.0"
-    ]
-  },
-  "plugins": {
-    "openapi": {
-      "service": "smithy.example#Weather",
-      "protocol": "aws.protocols#restJson1",
-      "version": "3.1.0"
+  "projections": {
+    "external-documentation": {
+      "transforms": [
+        {
+          "name": "excludeShapesByTrait",
+          "args": {
+            "traits": ["internal"]
+          }
+        },
+        {
+          "name": "excludeShapesByTag",
+          "args": {
+            "tags": ["internal", "beta"]
+          }
+        },
+        {
+          "name": "excludeTraitsByTag",
+          "args": {
+            "tags": ["internal", "beta"]
+          }
+        },
+        {
+          "name": "removeUnusedShapes",
+          "args": {}
+        },
+        {
+          "name": "includeMetadata",
+          "args": {
+            "keys": ["authors", "company", "license"]
+          }
+        }
+      ]
+    },
+    "downstream-consumer": {
+      "transforms": [
+        {
+          "name": "excludeTraits",
+          "args": {
+            "traits": ["examples"]
+          }
+        },
+        {
+          "name": "removeUnusedShapes",
+          "args": {}
+        },
+        {
+          "name": "excludeMetadata",
+          "args": {
+            "keys": ["validators"]
+          }
+        }
+      ]
     }
   }
 }
