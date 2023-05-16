@@ -39,7 +39,6 @@ structure GetCityOutput for City {
     $coordinates
 }
 
-@tags(["beta"])
 operation CreateCity {
     input: CreateCityInput,
     output: CreateCityOutput

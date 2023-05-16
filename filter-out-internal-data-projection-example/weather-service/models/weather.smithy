@@ -15,7 +15,7 @@ service Weather {
     errors: [ServiceError, ThrottlingError]
 }
 
-@internal
+@readonly
 operation GetCurrentTime {
     output: GetCurrentTimeOutput
 }
