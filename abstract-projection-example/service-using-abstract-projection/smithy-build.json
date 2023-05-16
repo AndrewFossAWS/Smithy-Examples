@@ -1,0 +1,21 @@
+{
+  "version": "1.0",
+  "projections": {
+    "external-projection-impl": {
+      "transforms": [
+        {
+          "name": "apply",
+          "args": {
+            "projections": ["external-projection"]
+          }
+        },
+        {
+          "name": "excludeMetadata",
+          "args": {
+            "keys": ["suppressions"]
+          }
+        }
+      ]
+    }
+  }
+}
